@@ -2,6 +2,9 @@ import { registerSW } from "virtual:pwa-register";
 
 registerSW({ immediate: true });
 
+const pdfBtn = document.getElementById("pdfBtn");
+if (pdfBtn) pdfBtn.addEventListener("click", () => window.print());
+
 const offlinePill = document.getElementById("offlinePill");
 function updateOnlineState() {
   if (!offlinePill) return;
