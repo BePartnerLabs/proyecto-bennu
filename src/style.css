@@ -64,7 +64,7 @@ p{margin:0;}
 img{max-width:100%; display:block;}
 ::selection{background:var(--ember-soft); color:var(--ink);}
 a{color:var(--sea);}
-a:focus-visible, button:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible{outline:2px solid var(--ember); outline-offset:2px;}
 
 .wrap{max-width:920px; margin:0 auto; padding:0 28px;}
 .eyebrow{
@@ -392,9 +392,35 @@ footer{padding:56px 0 72px;}
 .sources a{color:var(--ink-soft); text-decoration:underline; text-decoration-color:var(--line);}
 .sources a:hover{color:var(--ember); text-decoration-color:var(--ember);}
 
+/* zoom / lightbox */
+.photo-band img, .photo-pair img, .diagram-frame img, .diagram-frame svg{cursor:zoom-in;}
+.zoom-badge{
+  position:absolute; right:12px; bottom:12px; width:34px; height:34px; border-radius:50%;
+  background:rgba(16,32,42,0.62); color:#fff; display:flex; align-items:center; justify-content:center;
+  pointer-events:none;
+}
+.diagram-frame{position:relative;}
+
+.lightbox-overlay{
+  position:fixed; inset:0; z-index:100; background:rgba(8,14,18,0.94);
+  display:flex; align-items:center; justify-content:center; padding:56px 32px;
+  opacity:0; pointer-events:none; transition:opacity .18s ease;
+}
+.lightbox-overlay.open{opacity:1; pointer-events:auto;}
+.lightbox-content{width:100%; max-width:min(94vw, 1400px); max-height:86vh; display:flex; flex-direction:column; align-items:center; gap:16px;}
+.lightbox-content img{max-width:100%; max-height:76vh; width:auto; height:auto; display:block; border-radius:2px; margin:0 auto;}
+.lightbox-content svg{display:block; width:100%; height:auto; max-height:76vh; background:#fff; border-radius:2px;}
+.lightbox-caption{color:#EAEFEC; font-size:0.95rem; text-align:center; max-width:80ch; margin:0;}
+.lightbox-close{
+  position:fixed; top:22px; right:26px; width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.35); color:#fff;
+  font-size:1.6rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;
+}
+.lightbox-close:hover{background:rgba(255,255,255,0.2);}
+
 /* print / PDF */
 @media print{
-  .topbar, .offline-pill, .pdf-btn, .lang-switch{display:none !important;}
+  .topbar, .offline-pill, .pdf-btn, .lang-switch, .zoom-badge, .lightbox-overlay, .lightbox-close{display:none !important;}
   html{scroll-behavior:auto;}
   body{background:#fff; color:#10202A; font-size:12pt;}
   .reveal{opacity:1 !important; transform:none !important;}
