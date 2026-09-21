@@ -273,14 +273,16 @@ td.num, th.num{font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabu
 
 /* site metrics */
 .site-layout{display:grid; grid-template-columns:1.2fr 1fr; gap:36px; align-items:start;}
+.site-photos{display:flex; flex-direction:column; gap:20px;}
 .metric-list{display:flex; flex-direction:column;}
+.metric-list-full{display:grid; grid-template-columns:repeat(2,1fr); column-gap:48px; margin-bottom:32px;}
 .metric-list .row{display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px solid var(--line);}
 .metric-list .row:last-child{border-bottom:none;}
 .metric-list .row .k{color:var(--ink-soft); font-size:0.88rem;}
 .metric-list .row .v{font-family:"IBM Plex Mono", monospace; font-weight:500; text-align:right; font-variant-numeric:tabular-nums;}
 
 .value-cards{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:32px;}
-.value-cards-single{grid-template-columns:1fr; align-content:start;}
+.value-cards-stack{grid-template-columns:1fr; align-content:start; margin-top:0;}
 .value-card{border:1px solid var(--line); border-radius:3px; padding:16px 18px; background:var(--paper-raised);}
 .value-card .eyebrow{color:var(--ember);}
 .value-card h4{font-size:0.98rem; font-weight:600; margin-top:6px;}
@@ -444,6 +446,7 @@ footer{padding:56px 0 72px;}
   #batimetria .options{grid-template-columns:1fr;}
   .precedents{grid-template-columns:1fr;}
   .site-layout{grid-template-columns:1fr;}
+  .metric-list-full{grid-template-columns:1fr;}
   .value-cards{grid-template-columns:1fr;}
   .alliance{grid-template-columns:1fr;}
   .firm-grid{grid-template-columns:1fr;}
