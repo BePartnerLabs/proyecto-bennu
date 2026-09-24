@@ -1,6 +1,13 @@
 import { registerSW } from "virtual:pwa-register";
 
-registerSW({ immediate: true });
+registerSW({
+  immediate: true,
+  onRegisteredSW(_swUrl, registration) {
+    if (!registration) return;
+    // Re-check for a new build periodically for tabs left open a long time.
+    setInterval(() => registration.update(), 60 * 60 * 1000);
+  },
+});
 
 const pdfBtn = document.getElementById("pdfBtn");
 if (pdfBtn) pdfBtn.addEventListener("click", () => window.print());
