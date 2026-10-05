@@ -224,6 +224,7 @@ thead th{
 }
 tbody tr:last-child td{border-bottom:none;}
 td.num, th.num{font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums; text-align:right;}
+tbody tr.total td{font-weight:600; color:var(--ink); background:var(--sea-soft);}
 
 /* options triptych */
 .options{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
