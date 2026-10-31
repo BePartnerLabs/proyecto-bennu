@@ -388,6 +388,8 @@ footer{padding:56px 0 72px;}
 .contact-card .who p{color:var(--ink-soft); font-size:0.9rem; margin-top:4px;}
 .contact-meta{display:flex; flex-direction:column; gap:6px; font-size:0.9rem; font-family:"IBM Plex Mono", monospace;}
 .contact-meta a{text-decoration:none;}
+.proponent-list{list-style:none; padding:0; margin:4px 0 0; display:grid; gap:4px;}
+.proponent-list li{font-family:"Newsreader", serif; font-weight:600; font-size:1.1rem; color:var(--ink);}
 .pending-note{font-style:italic; color:var(--ink-faint); font-size:0.9rem; margin-top:4px;}
 .closing{
   font-family:"Newsreader", serif; font-style:italic; color:var(--ink-soft);
