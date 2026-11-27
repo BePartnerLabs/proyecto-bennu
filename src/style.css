@@ -230,6 +230,7 @@ tbody tr.total td{font-weight:600; color:var(--ink); background:var(--sea-soft);
 .options{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
 #batimetria .options{grid-template-columns:repeat(2,1fr);}
 #alternativas .options, #alternatives .options{grid-template-columns:repeat(2,1fr);}
+#alternativas .option.selected, #alternatives .option.selected{grid-column:1 / -1;}
 .option{
   border:1px solid var(--line); border-radius:4px; padding:22px 20px;
   display:flex; flex-direction:column; gap:14px; background:var(--paper-raised);
